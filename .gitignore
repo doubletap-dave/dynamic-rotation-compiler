@@ -1,0 +1,27 @@
+# WoW Addon Development
+*.bak
+*.tmp
+*~
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Kiro IDE (keep specs but ignore other IDE files)
+.kiro/cache/
+.kiro/logs/
+
+# Windows
+desktop.ini
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride

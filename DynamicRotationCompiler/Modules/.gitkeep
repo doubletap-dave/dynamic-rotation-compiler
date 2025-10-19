@@ -1,0 +1,10 @@
+# Modules Directory
+
+This directory will contain the feature modules for the addon.
+
+Planned modules:
+- Storage.lua - Data persistence with AceDB
+- SequenceEngine.lua - Sequence execution logic
+- UI.lua - User interface components
+- Security.lua - Secure button management
+- ImportExport.lua - Import/export functionality
