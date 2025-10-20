@@ -53,6 +53,11 @@ function DRC:RegisterModules()
     if Storage then
         self:RegisterModule("Storage", Storage)
     end
+    
+    -- RotationEngine module
+    if RotationEngine then
+        self:RegisterModule("RotationEngine", RotationEngine, {"Storage"})
+    end
 end
 
 function DRC:OnEnable()

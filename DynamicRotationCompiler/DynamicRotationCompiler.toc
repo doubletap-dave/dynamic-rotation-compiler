@@ -30,7 +30,7 @@ Core\Core.lua
 
 # Modules (will be added as implemented)
 Modules\Storage.lua
-# Modules\SequenceEngine.lua
+Modules\RotationEngine.lua
 # Modules\UI.lua
 # Modules\Security.lua
 # Modules\ImportExport.lua
