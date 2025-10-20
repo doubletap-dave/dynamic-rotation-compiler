@@ -558,7 +558,7 @@ function UI:CreateAceGUIBackend()
         
         -- Configure frame
         frame:SetTitle(windowDef.title or "Window")
-        frame:SetLayout("Fill")
+        frame:SetLayout("Flow")
         
         -- Set size if specified
         if windowDef.width and windowDef.height then
@@ -580,6 +580,20 @@ function UI:CreateAceGUIBackend()
         frame:SetCallback("OnClose", function(widget)
             AceGUI:Release(widget)
         end)
+        
+        -- Add simple content for now
+        local label = AceGUI:Create("Label")
+        label:SetText("Dynamic Rotation Compiler\n\nUI implementation in progress.\n\nThis window will display your rotation list and management tools.")
+        label:SetFullWidth(true)
+        frame:AddChild(label)
+        
+        -- Add a button
+        local button = AceGUI:Create("Button")
+        button:SetText("Close")
+        button:SetCallback("OnClick", function()
+            frame:Hide()
+        end)
+        frame:AddChild(button)
         
         return window
     end
