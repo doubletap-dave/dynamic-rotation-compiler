@@ -16,9 +16,7 @@ Libs\AceEvent-3.0\AceEvent-3.0.lua
 Libs\AceTimer-3.0\AceTimer-3.0.lua
 Libs\AceDB-3.0\AceDB-3.0.lua
 Libs\AceConsole-3.0\AceConsole-3.0.lua
-# Libs\AceGUI-3.0\AceGUI-3.0.lua
-# Libs\AceConfig-3.0\AceConfig-3.0.lua
-# Libs\AceConfigDialog-3.0\AceConfigDialog-3.0.lua
+Libs\AceGUI-3.0\AceGUI-3.0.xml
 
 # JSON Library
 Libs\json.lua

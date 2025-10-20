@@ -545,23 +545,41 @@ function UI:CreateAceGUIBackend()
     
     -- Create window using AceGUI
     function backend:CreateWindow(windowDef, options)
-        -- Note: This will be fully implemented when AceGUI-3.0 is added
-        -- For now, return a placeholder
+        local AceGUI = LibStub("AceGUI-3.0")
+        if not AceGUI then
+            return nil
+        end
         
+        -- Create frame
+        local frame = AceGUI:Create("Frame")
+        if not frame then
+            return nil
+        end
+        
+        -- Configure frame
+        frame:SetTitle(windowDef.title or "Window")
+        frame:SetLayout("Fill")
+        
+        -- Set size if specified
+        if windowDef.width and windowDef.height then
+            frame:SetWidth(windowDef.width)
+            frame:SetHeight(windowDef.height)
+        end
+        
+        -- Create window object
         local window = {
             name = windowDef.name or "Unnamed Window",
             title = windowDef.title,
             definition = windowDef,
             options = options or {},
             widgets = {},
-            frame = nil
+            frame = frame
         }
         
-        -- TODO: Implement actual AceGUI window creation
-        -- local AceGUI = LibStub("AceGUI-3.0")
-        -- window.frame = AceGUI:Create("Frame")
-        -- window.frame:SetTitle(windowDef.title)
-        -- window.frame:SetLayout("Flow")
+        -- Set callback for window close
+        frame:SetCallback("OnClose", function(widget)
+            AceGUI:Release(widget)
+        end)
         
         return window
     end
