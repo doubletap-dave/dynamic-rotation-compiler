@@ -1067,4 +1067,6 @@ function RotationEngine:GetAllActiveRotations()
     return activeRotations
 end
 
+-- Export module globally for Core registration
+RotationEngine = RotationEngine
 return RotationEngine

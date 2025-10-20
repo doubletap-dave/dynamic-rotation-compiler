@@ -650,4 +650,6 @@ function UI:HandleSlashCommand(input)
     end
 end
 
+-- Export module globally for Core registration
+UI = UI
 return UI

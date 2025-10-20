@@ -658,6 +658,8 @@ function Storage:MigrateToV1()
     self.core:Print("Initialized schema version 1")
 end
 
+-- Export module globally for Core registration
+Storage = Storage
 return Storage
 
 

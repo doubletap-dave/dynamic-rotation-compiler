@@ -427,6 +427,7 @@ function DRC:SlashCommand(input)
         self:Print("Dynamic Rotation Compiler v1.0.0")
         self:Print("Commands:")
         self:Print("  /drc help - Show this help")
+        self:Print("  /drc show - Open the main UI")
         self:Print("  /drc modules - List registered modules")
         self:Print("  /drc status - Show addon status")
         return
@@ -436,6 +437,19 @@ function DRC:SlashCommand(input)
     
     if command == "help" then
         self:SlashCommand("")
+    elseif command == "show" or command == "ui" or command == "open" then
+        -- Open the UI
+        local uiModule = self:GetModule("UI")
+        if uiModule then
+            local api = uiModule:GetAPI()
+            if api and api.ShowMainWindow then
+                api.ShowMainWindow()
+            else
+                self:PrintError("UI module API not available")
+            end
+        else
+            self:PrintError("UI module not loaded")
+        end
     elseif command == "modules" then
         self:Print("Registered modules:")
         for name, data in pairs(self.modules) do
