@@ -7,7 +7,7 @@
 
 local ADDON_NAME = "DRC"
 
-local UISettings = {}
+UISettings = {}
 
 --[[
     Settings Window Definition

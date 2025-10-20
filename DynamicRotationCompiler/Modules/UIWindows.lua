@@ -8,7 +8,7 @@
 local ADDON_NAME = "DRC"
 
 -- Window definitions will be registered with the UI module
-local UIWindows = {}
+UIWindows = {}
 
 --[[
     Main Window - Rotation List View
