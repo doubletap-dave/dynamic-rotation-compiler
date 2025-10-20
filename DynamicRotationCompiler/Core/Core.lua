@@ -51,17 +51,26 @@ end
 function DRC:RegisterModules()
     -- Storage module
     if Storage then
+        self:Print("Registering Storage module...")
         self:RegisterModule("Storage", Storage)
+    else
+        self:PrintError("Storage module not found")
     end
     
     -- RotationEngine module
     if RotationEngine then
+        self:Print("Registering RotationEngine module...")
         self:RegisterModule("RotationEngine", RotationEngine, {"Storage"})
+    else
+        self:PrintError("RotationEngine module not found")
     end
     
     -- UI module
     if UI then
+        self:Print("Registering UI module...")
         self:RegisterModule("UI", UI, {"Storage", "RotationEngine"})
+    else
+        self:PrintError("UI module not found")
     end
 end
 

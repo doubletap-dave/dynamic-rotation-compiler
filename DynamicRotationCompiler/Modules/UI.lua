@@ -43,23 +43,38 @@ function UI:Initialize(core)
     self.core = core
     self._initialized = false
     
-    -- Register default theme
-    self:RegisterTheme("default", self:GetDefaultTheme())
+    -- Initialize registries
+    self.themes = {}
+    self.backends = {}
+    self.windows = {}
+    self.windowRegistry = {}
+    self.eventHandlers = {}
     
-    -- Register AceGUI backend (will be implemented when library is added)
-    self:RegisterBackend("aceGUI", self:CreateAceGUIBackend())
+    -- Register default theme directly
+    self.themes["default"] = self:GetDefaultTheme()
+    self.activeTheme = "default"
+    
+    -- Register AceGUI backend directly
+    self.backends["aceGUI"] = self:CreateAceGUIBackend()
+    self.activeBackend = "aceGUI"
     
     -- Subscribe to storage events
     core:SubscribeEvent("ROTATION_SAVED", function(event, data)
-        self:OnRotationSaved(data)
+        if self.OnRotationSaved then
+            self:OnRotationSaved(data)
+        end
     end)
     
     core:SubscribeEvent("ROTATION_DELETED", function(event, data)
-        self:OnRotationDeleted(data)
+        if self.OnRotationDeleted then
+            self:OnRotationDeleted(data)
+        end
     end)
     
     core:SubscribeEvent("PROFILE_CHANGED", function(event, data)
-        self:OnProfileChanged(data)
+        if self.OnProfileChanged then
+            self:OnProfileChanged(data)
+        end
     end)
     
     self._initialized = true
