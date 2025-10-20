@@ -11,7 +11,7 @@
 local ADDON_NAME = "DRC"
 
 -- Create the UI module
-local UI = DRC_CreateModule({
+UI = DRC_CreateModule({
     name = "UI",
     version = "1.0.0",
     description = "Modular UI system with plugin architecture and theme support"
@@ -665,6 +665,4 @@ function UI:HandleSlashCommand(input)
     end
 end
 
--- Export module globally for Core registration
-UI = UI
 return UI

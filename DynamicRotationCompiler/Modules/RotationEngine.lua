@@ -10,7 +10,7 @@
 local ADDON_NAME = "DRC"
 
 -- Create the RotationEngine module
-local RotationEngine = DRC_CreateModule({
+RotationEngine = DRC_CreateModule({
     name = "RotationEngine",
     version = "1.0.0",
     description = "Rotation execution engine with secure button management"
@@ -1067,6 +1067,4 @@ function RotationEngine:GetAllActiveRotations()
     return activeRotations
 end
 
--- Export module globally for Core registration
-RotationEngine = RotationEngine
 return RotationEngine
