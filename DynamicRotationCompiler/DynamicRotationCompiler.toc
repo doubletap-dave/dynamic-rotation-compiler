@@ -31,6 +31,8 @@ Core\Core.lua
 # Modules (will be added as implemented)
 Modules\Storage.lua
 Modules\RotationEngine.lua
-# Modules\UI.lua
+Modules\UI.lua
+Modules\UIWindows.lua
+Modules\UISettings.lua
 # Modules\Security.lua
 # Modules\ImportExport.lua
